@@ -8,4 +8,4 @@
 
 - [Object.is.md](#js/Object.is.md)
 
-- [woqu](#fuck.md)
+- [woqu](https://github.com/AngryChocobo/til/blob/main/fuck.md)
