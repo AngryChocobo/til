@@ -21,3 +21,43 @@ export function filterUselessDirectories(dir: Dirent) {
   const reg = /^\..+/; // 过滤掉以 "." 开头的文件夹
   return !target.includes(dir.name) && !reg.test(dir.name);
 }
+
+export async function readArticles(dirName: string) {
+  const files = await fs.readdir(dirName, {
+    encoding: "utf-8",
+    withFileTypes: true,
+  });
+  return files.filter((f) => !f.isDirectory()).map((f) => f.name);
+}
+
+async function genContent(directories: string[]) {
+  let content = "## Categories\n";
+  for (const dir of directories) {
+    content += `* [${dir}](#${dir}) \n`;
+  }
+
+  for (const dir of directories) {
+    content += "\n  ----- \n";
+    content += `\n  ### ${dir} \n`;
+    const articleNames = await readArticles(dir);
+    articleNames.forEach((article) => {
+      content += `* [${article}](#${article}) \n`;
+    });
+  }
+  return content;
+}
+async function bootstrap() {
+  //
+  const directories = await readCategories();
+  const content = await genContent(directories);
+  console.log(content);
+  await writeREADME(content);
+}
+
+export async function writeREADME(content: string) {
+  await fs.writeFile("README.md", content, {
+    encoding: "utf-8",
+  });
+}
+
+bootstrap();
