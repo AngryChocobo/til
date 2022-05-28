@@ -1,0 +1,31 @@
+{
+  "name": "til",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AngryChocobo/til.git"
+  },
+  "keywords": [],
+  "author": "AngryChocobo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AngryChocobo/til/issues"
+  },
+  "homepage": "https://github.com/AngryChocobo/til#readme",
+  "devDependencies": {
+    "@types/node": "^17.0.35",
+    "ts-node": "^10.8.0",
+    "typescript": "^4.7.2",
+    "@babel/preset-env": "^7.18.2",
+    "@babel/preset-typescript": "^7.17.12",
+    "@types/jest": "^27.5.1"
+  },
+  "dependencies": {
+    "jest": "^28.1.0"
+  }
+}
