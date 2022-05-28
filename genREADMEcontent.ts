@@ -41,7 +41,7 @@ async function genContent(directories: string[]) {
     content += `\n  ### ${dir} \n`;
     const articleNames = await readArticles(dir);
     articleNames.forEach((article) => {
-      content += `* [${article}](#${article}) \n`;
+      content += `* [${article}](http://github.com/AngryChocobo/til/blob/main/${dir}/${article}) \n`;
     });
   }
   return content;

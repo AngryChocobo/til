@@ -1,11 +1,7 @@
 ## Categories
+* [js](#js) 
 
-- [js](#js)
+  ----- 
 
-  ***
-
-  ### js
-
-- [Object.is.md](#js/Object.is.md)
-
-- [woqu](#fuck.md)
+  ### js 
+* [Objectis.md](http://github.com/AngryChocobo/til/blob/main/js/Objectis.md) 
