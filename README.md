@@ -4,4 +4,4 @@
   ----- 
 
   ### js 
-* [Objectis](#js/Object.is.md) 
+* [Objectis](#js/Objectis.md) 
