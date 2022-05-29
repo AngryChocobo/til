@@ -1,14 +1,8 @@
 import fs from "node:fs/promises";
-import { readCategories, readArticles, writeREADME } from "../genREADMEcontent";
+import { writeREADME, pathBootstrap } from "../genREADMEcontent";
 
-test("categories", async () => {
-  const result = await readCategories();
-  expect(result.join(",")).toBe("copyTest,js");
-});
-
-test("articles", async () => {
-  const result = await readArticles("js");
-  expect(result.join(",")).toBe("Object.is copy.md,Object.is.md");
+describe("use path api", () => {
+  pathBootstrap();
 });
 
 test.skip("write README.md", async () => {

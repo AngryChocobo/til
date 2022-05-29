@@ -1,57 +1,32 @@
-import { Dirent } from "node:fs";
-import * as fs from "node:fs/promises";
+// import path from "path";
+// import glob from "glob";
+// import * as fs from "node:fs/promises";
 
-export async function readCategories() {
-  const result = await fs.readdir("./", {
-    encoding: "utf-8",
-    withFileTypes: true,
-  });
-
-  const directories = result
-    .filter((file) => file.isDirectory())
-    .filter(filterUselessDirectories)
-    .map((dir) => dir.name);
-  console.log(directories);
-
-  return directories;
+export async function pathBootstrap() {
+  // const dirs = glob.sync("*/").filter(filterUselessDirectories);
+  // // 生成文件夹目录
+  // let str = dirs.reduce((pre, cur) => {
+  //   const dirName = path.basename(cur);
+  //   pre += `* [${dirName}](#${dirName}) \n`;
+  //   return pre;
+  // }, "## Categories\n");
+  // str += "\n---\n";
+  // dirs.forEach((dir) => {
+  //   const files = glob.sync(dir + "*.md");
+  //   files.forEach((file) => {
+  //     var extension = path.extname(file); //  获取后缀名
+  //     var fileName = path.basename(file, extension); // 获取没有后缀的文件名
+  //     var dirName = path.dirname(file); // 获取文件夹名
+  //     str += `* [${fileName}](#${file}) \n`;
+  //   });
+  // });
+  // await writeREADME(str);
 }
 
-export function filterUselessDirectories(dir: Dirent) {
+export function filterUselessDirectories(dirName: string) {
   const target = ["node_modules"];
   const reg = /^\..+/; // 过滤掉以 "." 开头的文件夹
-  return !target.includes(dir.name) && !reg.test(dir.name);
-}
-
-export async function readArticles(dirName: string) {
-  const files = await fs.readdir(dirName, {
-    encoding: "utf-8",
-    withFileTypes: true,
-  });
-  return files.filter((f) => !f.isDirectory()).map((f) => f.name);
-}
-
-async function genContent(directories: string[]) {
-  let content = "## Categories\n";
-  for (const dir of directories) {
-    content += `* [${dir}](#${dir}) \n`;
-  }
-
-  for (const dir of directories) {
-    content += "\n  ----- \n";
-    content += `\n  ### ${dir} \n`;
-    const articleNames = await readArticles(dir);
-    articleNames.forEach((article) => {
-      content += `* [${article}](http://github.com/AngryChocobo/til/blob/main/${dir}/${article}) \n`;
-    });
-  }
-  return content;
-}
-async function bootstrap() {
-  //
-  const directories = await readCategories();
-  const content = await genContent(directories);
-  console.log(content);
-  await writeREADME(content);
+  return !target.includes(dirName) && !reg.test(dirName);
 }
 
 export async function writeREADME(content: string) {
@@ -60,4 +35,4 @@ export async function writeREADME(content: string) {
   });
 }
 
-bootstrap();
+// pathBootstrap();
