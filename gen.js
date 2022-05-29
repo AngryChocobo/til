@@ -21,6 +21,7 @@ async function pathBootstrap() {
       const fileName = path.basename(file, extension); // 获取没有后缀的文件名
       str += `* [${fileName}](${file}) \n`;
     });
+    str += "\n";
   });
   await writeREADME(str);
 }
