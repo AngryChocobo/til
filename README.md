@@ -1,9 +1,9 @@
-## Categories
+### Categories
 
-- [js](#js)
+* [js](#js)
 
-  ***
+--- 
 
-  ### js
+### js
 
-- [Objectis.md](http://github.com/AngryChocobo/til/blob/main/js/Objectis.md)
+* [Objectis.md](js/Objectis.md)
