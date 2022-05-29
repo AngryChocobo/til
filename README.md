@@ -1,7 +1,7 @@
 ## Categories
 
-- [js](#js)
+* [js](#js) 
 
 ---
 
-- [Objectis](#js/Objectis.md)
+* [Objectis](#js/Objectis.md) 
