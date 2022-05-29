@@ -12,11 +12,13 @@ async function pathBootstrap() {
   }, "## Categories\n\n");
   str += "\n---\n\n";
   dirs.forEach((dir) => {
+    const dirName = path.basename(dir);
+    str += `### ${dirName}\n\n`;
+
     const files = glob.sync(dir + "*.md");
     files.forEach((file) => {
-      var extension = path.extname(file); //  获取后缀名
-      var fileName = path.basename(file, extension); // 获取没有后缀的文件名
-      var dirName = path.dirname(file); // 获取文件夹名
+      const extension = path.extname(file); //  获取后缀名
+      const fileName = path.basename(file, extension); // 获取没有后缀的文件名
       str += `* [${fileName}](#${file}) \n`;
     });
   });
