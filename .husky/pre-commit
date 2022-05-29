@@ -4,4 +4,3 @@
 #npm test
 npm run updateDoc
 git add README.md
-git commit -m "update README.md"
