@@ -19,7 +19,7 @@ async function pathBootstrap() {
     files.forEach((file) => {
       const extension = path.extname(file); //  获取后缀名
       const fileName = path.basename(file, extension); // 获取没有后缀的文件名
-      str += `* [${fileName}](#${file}) \n`;
+      str += `* [${fileName}](${file}) \n`;
     });
   });
   await writeREADME(str);
