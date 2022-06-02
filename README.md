@@ -9,6 +9,7 @@
 ### js
 
 * [Objectis](js/Objectis.md) 
+* [String.replace](js/String.replace.md) 
 
 ### node
 
