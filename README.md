@@ -13,7 +13,6 @@
 
 ### node
 
-* [README](node/README.md) 
 * [使用path+glob遍历](node/使用path+glob遍历.md) 
 
 ### software-engineering
