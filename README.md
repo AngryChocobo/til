@@ -2,6 +2,7 @@
 
 * [js](#js) 
 * [node](#node) 
+* [python](#python) 
 * [software-engineering](#software-engineering) 
 * [vim](#vim) 
 
@@ -16,6 +17,10 @@
 
 * [使用path+glob遍历](node/使用path+glob遍历.md) 
 * [如何判断是否正在直接运行js文件](node/如何判断是否正在直接运行js文件.md) 
+
+### python
+
+* [set-pip-mirror](python/set-pip-mirror.md) 
 
 ### software-engineering
 
