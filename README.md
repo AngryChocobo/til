@@ -1,5 +1,6 @@
 ## Categories
 
+* [db](#db) 
 * [english](#english) 
 * [github](#github) 
 * [js](#js) 
@@ -10,6 +11,10 @@
 * [vscode](#vscode) 
 
 ---
+
+### db
+
+* [SQLite attempt to write a readonly database](db/SQLite attempt to write a readonly database.md) 
 
 ### english
 
